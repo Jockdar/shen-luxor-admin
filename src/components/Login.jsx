@@ -1,17 +1,18 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
+import { backendUrl } from '../App'
 
 const Login = ({ setToken }) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const onSubmitHandler = async(e) => {
+    const onSubmitHandler = async (e) => {
         try {
             e.preventDefault();
-
-            const response = await axios.post('http://localhost:4000/api/user/admin', { email, password })
+            // FIXED: Using the live backendUrl variable
+            const response = await axios.post(backendUrl + '/api/user/admin', { email, password })
 
             if (response.data.success) {
                 setToken(response.data.token)
