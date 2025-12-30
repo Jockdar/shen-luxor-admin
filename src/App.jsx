@@ -9,9 +9,9 @@ import Login from './components/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// --- FORCE FIX: We are typing the address directly ---
+// --- LIVE BACKEND URL ---
 export const backendUrl = "https://shen-luxor-backend.vercel.app";
-// ----------------------------------------------------
+// ------------------------
 
 export const currency = '$';
 
@@ -19,8 +19,8 @@ const App = () => {
         const [token, setToken] = useState(localStorage.getItem('token') ? localStorage.getItem('token') : '');
 
         useEffect(() => {
-            localStorage.setItem('token', token)
-        }, [token])
+            localStorage.setItem('token', token);
+        }, [token]);
 
         return ( <
                 div className = "bg-gray-50 min-h-screen" >
@@ -56,10 +56,10 @@ const App = () => {
                                 element = { < Orders token = { token }
                                     />} / >
                                     <
-                                    /Routes> < /
-                                    div > <
-                                    /div> < /
-                                    >
+                                    /Routes> <
+                                    /div> <
+                                    /div> <
+                                    />
                                 )
                             } <
                             /div>
